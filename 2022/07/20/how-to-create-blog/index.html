@@ -31,7 +31,7 @@
   
 
   
-    <link rel="shortcut icon" href="/luluminus.git/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
   
 
   
@@ -40,9 +40,9 @@
   
 
   
-<link rel="stylesheet" href="/luluminus.git/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
-<link rel="alternate" href="/luluminus.git/atom.xml" title="lulu-blog" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="lulu-blog" type="application/atom+xml">
 </head>
 <body>
   <div class="root-container">
@@ -58,7 +58,7 @@
   <div class="navbar-content">
     <!-- logo -->
     <div class="navbar-logo">
-      <a href="/luluminus.git/">
+      <a href="/">
         
           lulu-blog
         
@@ -73,11 +73,11 @@
       </div>
       <ul class="navbar-list">
         
-          <li class="navbar-list-item"><a href="/luluminus.git/">首页</a></li>
+          <li class="navbar-list-item"><a href="/">首页</a></li>
         
-          <li class="navbar-list-item"><a href="/luluminus.git/links">友链</a></li>
+          <li class="navbar-list-item"><a href="/links">友链</a></li>
         
-          <li class="navbar-list-item"><a href="/luluminus.git/about">关于</a></li>
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
         
       </ul>
     </div>
@@ -186,11 +186,11 @@
 <p>如果需要预览draft文件夹下面的文件，需要在后面加上–draft参数</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s --draft</span><br></pre></td></tr></table></figure>
 
-<h2 id="部署博客"><a href="#部署博客" class="headerlink" title="部署博客"></a>部署博客</h2><p>当写完文章时，需要对文章编译后上传，部署到GitHub仓库里，我们需要注册一个GitHub账号，建议科学上网去注册，不然太慢了，如果GitHub注册问题无法解决，可以使用国内的<a href="https://gitee.com/">码云</a>注册一个仓库，其实相当于国内的GitHub你可以这么理解。<br>在码云创建好仓库之后，将仓库的SSH后面的地址复制到_config.yml文件里，找到以下这个地方，修改一下</p>
+<h2 id="部署博客"><a href="#部署博客" class="headerlink" title="部署博客"></a>部署博客</h2><p>当写完文章时，需要对文章编译后上传，部署到GitHub仓库里，我们需要注册一个GitHub账号，建议科学上网去注册，不然太慢了，如果GitHub注册问题无法解决，可以使用国内的<a target="_blank" rel="noopener" href="https://gitee.com/">码云</a>注册一个仓库，其实相当于国内的GitHub你可以这么理解。<br>在码云创建好仓库之后，将仓库的SSH后面的地址复制到_config.yml文件里，找到以下这个地方，修改一下</p>
 <blockquote>
 <p><font color=#000>#Deployment<br><font color=#000>##Docs: <code>https://hexo.io/docs/deployment.html</code><br><font color=#000>deploy:<br><font color=#000>type: git<br><font color=#000>repo: 这里填写为刚复制仓库的SSH地址<br><font color=#000>branch: master</p>
 </blockquote>
-<p>哦对了，对于如何生成SSH公钥我把码云公钥教程也放这里吧，大家不要着急，一步一步来搭建博客不难的。<a href="https://gitee.com/help/articles/4181">SSH公钥教程</a>,码云写的教程还是比较详细的。</p>
+<p>哦对了，对于如何生成SSH公钥我把码云公钥教程也放这里吧，大家不要着急，一步一步来搭建博客不难的。<a target="_blank" rel="noopener" href="https://gitee.com/help/articles/4181">SSH公钥教程</a>,码云写的教程还是比较详细的。</p>
 <h2 id="上传项目"><a href="#上传项目" class="headerlink" title="上传项目"></a>上传项目</h2><p>到了上传项目这一步了，我们需要用到hexo的GitHub插件<font color="orange">hexo-deployer-git</font>,首先cmd命令去下载这个插件.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>然后就到了万众瞩目的一步了，输入以下cmd命令即可上传项目了</p>
@@ -212,7 +212,7 @@
     
     <div class="card-text">
       
-        <a href="/luluminus.git/2022/07/21/Web-Software-Engineer-begin/" itemprop="url">
+        <a href="/2022/07/21/Web-Software-Engineer-begin/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">前端入门之路</h2>
         </a>
       
@@ -227,7 +227,7 @@
     
     <div class="card-text">
       
-        <a href="/luluminus.git/2022/07/19/hello-my-blog/" itemprop="url">
+        <a href="/2022/07/19/hello-my-blog/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">Lulu blog for tec</h2>
         </a>
       
@@ -406,7 +406,7 @@
 
 
 
-<script src="/luluminus.git/js/script.js"></script>
+<script src="/js/script.js"></script>
 
 
   

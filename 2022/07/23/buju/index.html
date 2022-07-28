@@ -26,7 +26,7 @@
 
   
 
-  <title>Lulu blog for tec | lulu-blog</title>
+  <title>如何实现水平垂直居中 | lulu-blog</title>
 
   
 
@@ -101,15 +101,15 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Lulu blog for tec</h1>
+          <h1 class="title-wrap">如何实现水平垂直居中</h1>
           <h2 class="title-sub-wrap">
             <strong>lulu</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-07-19T08:13:28.392Z" itemprop="datePublished">2022-07-19</time>
+            <time  class="article-date" datetime="2022-07-23T02:15:33.216Z" itemprop="datePublished">2022-07-23</time>
           </h2>
           <ul class="wrap-list dark">
   
-    <li><a href="/categories/%E6%9C%89%E6%84%9F/">📒 有感</a></li>
+    <li><a href="/categories/%E7%BC%96%E7%A8%8B/">📒 编程</a></li>
   
 </ul>
           <ul class="wrap-list dark">
@@ -136,8 +136,12 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>记录自己的成长之路，学无止境</p>
-<p>其实写blog是对自己在前端学习路上的一个小帮手，因为前端知识很多很多，也算是总结学习成果，加油吧！！！</p>
+        <p>对于如何实现元素的水平垂直居中有以下的几种实现方法，供学习。</p>
+<h2 id="利用定位和margin-auto"><a href="#利用定位和margin-auto" class="headerlink" title="利用定位和margin:auto"></a>利用定位和margin:auto</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-color: #000;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    background: red;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    right: 0;</span><br><span class="line">    bottom: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    margin: auto;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="利用定位和margin负值"><a href="#利用定位和margin负值" class="headerlink" title="利用定位和margin负值"></a>利用定位和margin负值</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-color: #000;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    background: red;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 50%;</span><br><span class="line">    left: 50%;</span><br><span class="line">    margin-top: -25px;</span><br><span class="line">    margin-left: -25px;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="利用定位和CSS3属性"><a href="#利用定位和CSS3属性" class="headerlink" title="利用定位和CSS3属性"></a>利用定位和CSS3属性</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-color: #000;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    background: red;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 50%;</span><br><span class="line">    left: 50%;</span><br><span class="line">    transform: translate(-50%,-50%); //translate(x,y);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="利用flex布局"><a href="#利用flex布局" class="headerlink" title="利用flex布局"></a>利用flex布局</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-color: #000;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    background: red;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="利用grid布局"><a href="#利用grid布局" class="headerlink" title="利用grid布局"></a>利用grid布局</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-color: #000;</span><br><span class="line">    display: grid;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    background: red;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
       </section>
 
@@ -150,8 +154,8 @@
     
     <div class="card-text">
       
-        <a href="/2022/07/20/how-to-create-blog/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">如何用Hexo和GitHub Page搭建个人blog</h2>
+        <a href="/2022/07/24/AnimateCss-Swiper/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">AnimateCss和Swiper插件</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -159,6 +163,20 @@
   </article>
 </div>
           
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2022/07/22/how-to-create-carousel-figure/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">轮播图的实现</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
           
         </nav>
       

@@ -26,7 +26,7 @@
 
   
 
-  <title>如何实现水平垂直居中 | lulu-blog</title>
+  <title>关于正则表达式笔记 | lulu-blog</title>
 
   
 
@@ -101,11 +101,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">如何实现水平垂直居中</h1>
+          <h1 class="title-wrap">关于正则表达式笔记</h1>
           <h2 class="title-sub-wrap">
             <strong>lulu</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-07-23T02:15:33.216Z" itemprop="datePublished">2022-07-23</time>
+            <time  class="article-date" datetime="2022-07-28T12:11:49.334Z" itemprop="datePublished">2022-07-28</time>
           </h2>
           <ul class="wrap-list dark">
   
@@ -136,12 +136,19 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>对于如何实现元素的水平垂直居中有以下的几种实现方法，供学习。</p>
-<h2 id="利用定位和margin-auto"><a href="#利用定位和margin-auto" class="headerlink" title="利用定位和margin:auto"></a>利用定位和margin:auto</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-color: #000;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    background: red;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    right: 0;</span><br><span class="line">    bottom: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    margin: auto;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="利用定位和margin负值"><a href="#利用定位和margin负值" class="headerlink" title="利用定位和margin负值"></a>利用定位和margin负值</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-color: #000;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    background: red;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 50%;</span><br><span class="line">    left: 50%;</span><br><span class="line">    margin-top: -25px;</span><br><span class="line">    margin-left: -25px;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="利用定位和CSS3属性"><a href="#利用定位和CSS3属性" class="headerlink" title="利用定位和CSS3属性"></a>利用定位和CSS3属性</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-color: #000;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    background: red;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 50%;</span><br><span class="line">    left: 50%;</span><br><span class="line">    transform: translate(-50%,-50%); //translate(x,y);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="利用flex布局"><a href="#利用flex布局" class="headerlink" title="利用flex布局"></a>利用flex布局</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-color: #000;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    background: red;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="利用grid布局"><a href="#利用grid布局" class="headerlink" title="利用grid布局"></a>利用grid布局</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-color: #000;</span><br><span class="line">    display: grid;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">    width: 50px;</span><br><span class="line">    height: 50px;</span><br><span class="line">    background: red;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+        <p>正则表达式一般用于校验账号或者密码（密钥）的正确性，记录一下正则表达式的语法规则。</p>
+<h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><p>1、\d 匹配一个数字<br>2、\D 匹配一个非数字字符<br>3、\w 匹配一个单字字符（字母、数字或者下划线）<br>4、\W 匹配一个非单字字符<br>5、\s 匹配一个空白字符，包括空格、制表符和换行符<br>6、. 任意字符<br>7、^ 匹配开头<br>8、$ 匹配结尾</p>
+<h2 id="元字符注意事项"><a href="#元字符注意事项" class="headerlink" title="元字符注意事项"></a>元字符注意事项</h2><p>如果使用new RegExp()写法，反斜杠需多写一个，因为\本身是转义字符。<br>比如&#x2F;^\d$&#x2F;和new RegExp(‘^\d$’)是相同的意思。<br>如果密钥规定有.或者#又或者其它符号，需要在前面加一个\。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例子：</span><br><span class="line">/^.$/      检查字符串是不是任意字符</span><br><span class="line">/^\.$/     检查字符串是不是一个点</span><br><span class="line">/^\\.$/    检查字符串是不是一个反斜杠</span><br></pre></td></tr></table></figure>
+<h2 id="方括号表示法"><a href="#方括号表示法" class="headerlink" title="方括号表示法"></a>方括号表示法</h2><p>可以使用短横-来指定一个字符范围，^表示否定。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">元字符      等价的方括号表示法</span><br><span class="line"> \d             [0-9]</span><br><span class="line"> \D             [^0-9]</span><br><span class="line"> \w             [A-Za-z0-9_]</span><br><span class="line"> \W             [^A-Za-z0-9_]</span><br></pre></td></tr></table></figure>
+<h2 id="正则表达式的书写"><a href="#正则表达式的书写" class="headerlink" title="正则表达式的书写"></a>正则表达式的书写</h2><p>借着一些例子去讲解。<br>例一：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">检查银行卡密码是否六位数字</span><br><span class="line">var regexp1 = /^\d&#123;6&#125;$/;</span><br><span class="line">var regexp2 = new RegExp(&#x27;^\\d&#123;6&#125;$&#x27;);</span><br><span class="line">这两个表达式是表示同样的意思。</span><br></pre></td></tr></table></figure>
+<p>例二：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">请验证某字符串是否是五位字母，大小写均可</span><br><span class="line">var str = &#x27;abcde&#x27;;    //true</span><br><span class="line">var regexp1 = /^[a-zA-Z]&#123;5&#125;$/</span><br></pre></td></tr></table></figure>
+<p>例三：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">请验证某字符串是否是4位小写字母，且最后一位不能是m字母</span><br><span class="line">var str1 = &#x27;abcd&#x27;;    //true</span><br><span class="line">var str2 = &#x27;abcm&#x27;;    //false</span><br><span class="line">var regexp1 = /^[a-z]&#123;3&#125;[a-ln-z]$/   最后一位不能为m，那么范围取a到l，n到z</span><br></pre></td></tr></table></figure>
+<p>有关于正则表达式大概先写，这么多，网上也有别人写好的正则表达式“轮子“,有需求可以直接查找即可。<br>这一篇主要是熟悉一下基本的用法。</p>
 
       </section>
 
@@ -149,28 +156,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2022/07/24/AnimateCss-Swiper/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">AnimateCss和Swiper插件</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2022/07/22/how-to-create-carousel-figure/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">轮播图的实现</h2>
+        <a href="/2022/07/27/bibao/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">关于闭包笔记</h2>
         </a>
       
       <div class="card-text--row">Older</div>

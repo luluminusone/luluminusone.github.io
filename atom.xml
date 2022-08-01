@@ -6,7 +6,7 @@
   <link href="https://luluminusone.github.io/atom.xml" rel="self"/>
   
   <link href="https://luluminusone.github.io/"/>
-  <updated>2022-07-27T03:47:09.447Z</updated>
+  <updated>2022-08-01T02:23:56.602Z</updated>
   <id>https://luluminusone.github.io/</id>
   
   <author>
@@ -17,12 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>关于正则表达式笔记</title>
+    <link href="https://luluminusone.github.io/2022/07/28/Rep/"/>
+    <id>https://luluminusone.github.io/2022/07/28/Rep/</id>
+    <published>2022-07-28T12:11:49.334Z</published>
+    <updated>2022-08-01T02:23:56.602Z</updated>
+    
+    <content type="html"><![CDATA[<p>正则表达式一般用于校验账号或者密码（密钥）的正确性，记录一下正则表达式的语法规则。</p><h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><p>1、\d 匹配一个数字<br>2、\D 匹配一个非数字字符<br>3、\w 匹配一个单字字符（字母、数字或者下划线）<br>4、\W 匹配一个非单字字符<br>5、\s 匹配一个空白字符，包括空格、制表符和换行符<br>6、. 任意字符<br>7、^ 匹配开头<br>8、$ 匹配结尾</p><h2 id="元字符注意事项"><a href="#元字符注意事项" class="headerlink" title="元字符注意事项"></a>元字符注意事项</h2><p>如果使用new RegExp()写法，反斜杠需多写一个，因为\本身是转义字符。<br>比如&#x2F;^\d$&#x2F;和new RegExp(‘^\d$’)是相同的意思。<br>如果密钥规定有.或者#又或者其它符号，需要在前面加一个\。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例子：</span><br><span class="line">/^.$/      检查字符串是不是任意字符</span><br><span class="line">/^\.$/     检查字符串是不是一个点</span><br><span class="line">/^\\.$/    检查字符串是不是一个反斜杠</span><br></pre></td></tr></table></figure><h2 id="方括号表示法"><a href="#方括号表示法" class="headerlink" title="方括号表示法"></a>方括号表示法</h2><p>可以使用短横-来指定一个字符范围，^表示否定。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">元字符      等价的方括号表示法</span><br><span class="line"> \d             [0-9]</span><br><span class="line"> \D             [^0-9]</span><br><span class="line"> \w             [A-Za-z0-9_]</span><br><span class="line"> \W             [^A-Za-z0-9_]</span><br></pre></td></tr></table></figure><h2 id="正则表达式的书写"><a href="#正则表达式的书写" class="headerlink" title="正则表达式的书写"></a>正则表达式的书写</h2><p>借着一些例子去讲解。<br>例一：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">检查银行卡密码是否六位数字</span><br><span class="line">var regexp1 = /^\d&#123;6&#125;$/;</span><br><span class="line">var regexp2 = new RegExp(&#x27;^\\d&#123;6&#125;$&#x27;);</span><br><span class="line">这两个表达式是表示同样的意思。</span><br></pre></td></tr></table></figure><p>例二：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">请验证某字符串是否是五位字母，大小写均可</span><br><span class="line">var str = &#x27;abcde&#x27;;    //true</span><br><span class="line">var regexp1 = /^[a-zA-Z]&#123;5&#125;$/</span><br></pre></td></tr></table></figure><p>例三：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">请验证某字符串是否是4位小写字母，且最后一位不能是m字母</span><br><span class="line">var str1 = &#x27;abcd&#x27;;    //true</span><br><span class="line">var str2 = &#x27;abcm&#x27;;    //false</span><br><span class="line">var regexp1 = /^[a-z]&#123;3&#125;[a-ln-z]$/   最后一位不能为m，那么范围取a到l，n到z</span><br></pre></td></tr></table></figure><p>有关于正则表达式大概先写，这么多，网上也有别人写好的正则表达式“轮子“,有需求可以直接查找即可。<br>这一篇主要是熟悉一下基本的用法。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;正则表达式一般用于校验账号或者密码（密钥）的正确性，记录一下正则表达式的语法规则。&lt;/p&gt;
+&lt;h2 id=&quot;元字符&quot;&gt;&lt;a href=&quot;#元字符&quot; class=&quot;headerlink&quot; title=&quot;元字符&quot;&gt;&lt;/a&gt;元字符&lt;/h2&gt;&lt;p&gt;1、\d 匹配一个数字&lt;br&gt;2、</summary>
+      
+    
+    
+    
+    <category term="编程" scheme="https://luluminusone.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>关于闭包笔记</title>
     <link href="https://luluminusone.github.io/2022/07/27/bibao/"/>
     <id>https://luluminusone.github.io/2022/07/27/bibao/</id>
     <published>2022-07-27T01:18:47.896Z</published>
-    <updated>2022-07-27T03:47:09.447Z</updated>
+    <updated>2022-07-29T09:08:20.252Z</updated>
     
+    <content type="html"><![CDATA[<p>其实在javascript开发中会有一个不成文的规定吧，尽量少用全局变量，因为全局变量容易会污染环境，占内存等等，那么我们用闭包去进行私有化变量，先看下面的例子吧。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function a() &#123;</span><br><span class="line">    var name = &quot;alex&quot;</span><br><span class="line">    function b() &#123;</span><br><span class="line">        alert(name);</span><br><span class="line">    &#125;</span><br><span class="line">    return b;</span><br><span class="line">&#125;</span><br><span class="line">var c = a();</span><br><span class="line">c();</span><br></pre></td></tr></table></figure><p>从上面的例子我们可以大概知道闭包形成要有四个条件：<br>1、有函数嵌套。<br>2、内部函数引用外部作用域的变量参数。<br>3、返回值是函数。<br>4、创建一个对象函数，让其长期驻留。<br>闭包的缺点是内存消耗大，如果滥用闭包会造成网页的性能问题，内存的泄露。<br>在使用完闭包最好将局部变量全部删除，也就是等与null即可。（释放内存）。<br>总的来说闭包就是创建私有变量，延长变量的生命周期。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;其实在javascript开发中会有一个不成文的规定吧，尽量少用全局变量，因为全局变量容易会污染环境，占内存等等，那么我们用闭包去进行私有化变量，先看下面的例子吧。&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+      
     
     
     

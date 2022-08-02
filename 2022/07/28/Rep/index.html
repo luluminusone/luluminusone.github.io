@@ -142,12 +142,17 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例子：</span><br><span class="line">/^.$/      检查字符串是不是任意字符</span><br><span class="line">/^\.$/     检查字符串是不是一个点</span><br><span class="line">/^\\.$/    检查字符串是不是一个反斜杠</span><br></pre></td></tr></table></figure>
 <h2 id="方括号表示法"><a href="#方括号表示法" class="headerlink" title="方括号表示法"></a>方括号表示法</h2><p>可以使用短横-来指定一个字符范围，^表示否定。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">元字符      等价的方括号表示法</span><br><span class="line"> \d             [0-9]</span><br><span class="line"> \D             [^0-9]</span><br><span class="line"> \w             [A-Za-z0-9_]</span><br><span class="line"> \W             [^A-Za-z0-9_]</span><br></pre></td></tr></table></figure>
+<h2 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">量词             意义</span><br><span class="line"> *     匹配前一个表达式0次或多次。等价于&#123;0,&#125;</span><br><span class="line"> +     匹配前面一个表达式1次或者多次。等价于&#123;1,&#125;</span><br><span class="line"> ?     匹配前面一个表达式0次或者1次。等价于&#123;0,1&#125;</span><br><span class="line"> &#123;n&#125;   n是一个正整数，匹配了前面一个字符刚好出现了n次</span><br><span class="line"> &#123;n,&#125;  n是一个正整数，匹配前一个字符至少出现了n次</span><br><span class="line"> &#123;n,m&#125; n和m都是整数，匹配前面的字符至少n次，最多m次</span><br></pre></td></tr></table></figure>
 <h2 id="正则表达式的书写"><a href="#正则表达式的书写" class="headerlink" title="正则表达式的书写"></a>正则表达式的书写</h2><p>借着一些例子去讲解。<br>例一：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">检查银行卡密码是否六位数字</span><br><span class="line">var regexp1 = /^\d&#123;6&#125;$/;</span><br><span class="line">var regexp2 = new RegExp(&#x27;^\\d&#123;6&#125;$&#x27;);</span><br><span class="line">这两个表达式是表示同样的意思。</span><br></pre></td></tr></table></figure>
 <p>例二：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">请验证某字符串是否是五位字母，大小写均可</span><br><span class="line">var str = &#x27;abcde&#x27;;    //true</span><br><span class="line">var regexp1 = /^[a-zA-Z]&#123;5&#125;$/</span><br></pre></td></tr></table></figure>
 <p>例三：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">请验证某字符串是否是4位小写字母，且最后一位不能是m字母</span><br><span class="line">var str1 = &#x27;abcd&#x27;;    //true</span><br><span class="line">var str2 = &#x27;abcm&#x27;;    //false</span><br><span class="line">var regexp1 = /^[a-z]&#123;3&#125;[a-ln-z]$/   最后一位不能为m，那么范围取a到l，n到z</span><br></pre></td></tr></table></figure>
+<p>例四：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">请验证某字符串是否是这样的：以字母开头，中间是任意数字（最少1位）构成，并以字母结尾</span><br><span class="line">var str1 = &#x27;a564897b&#x27;; //true</span><br><span class="line">var str2 = &#x27;abcd&#x27;;     //false</span><br><span class="line">var str3 = &#x27;a1b&#x27;;      //true</span><br><span class="line">var regexp = /^[a-zA-Z]\d+[a-zA-Z]$/;</span><br></pre></td></tr></table></figure>
+<p>例五：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">请验证某字符串是否符合网址规则：以www.开头，中间是任意位的字符（字母数字下划线，最少一位，最后以.com结尾，也可以.com.cn结尾）</span><br><span class="line">var str1 = &#x27;www.abcd123.com&#x27;;  //true</span><br><span class="line">var str2 = &#x27;www.baidu.com&#x27;;    //true</span><br><span class="line">var str3 = &#x27;www.123aa&#x27; ;       //false</span><br><span class="line">var regexp = /^www\.\w+\.com(\.cn)?$/;</span><br></pre></td></tr></table></figure>
 <p>有关于正则表达式大概先写，这么多，网上也有别人写好的正则表达式“轮子“,有需求可以直接查找即可。<br>这一篇主要是熟悉一下基本的用法。</p>
 
       </section>
@@ -155,6 +160,20 @@
       
       
         <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2022/08/01/zengshangaicha/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">关于数组的常用方法和字符串的常用方法笔记</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
           
           
             <div class="article-nav-item layout-padding">
@@ -203,7 +222,7 @@
         <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
 </svg>
-        <span>11</span>
+        <span>12</span>
       </div>
       <div class="count-box--item">
         <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -248,14 +267,14 @@
     <ul class="categorys-list">
       
         <li class="categorys-list-item">
-          <a href="/categories/%E7%BC%96%E7%A8%8B/">
-            编程 (8)
+          <a href="/categories/%E5%AE%89%E5%88%A9/">
+            安利 (1)
           </a>
         </li>
       
         <li class="categorys-list-item">
-          <a href="/categories/%E5%AE%89%E5%88%A9/">
-            安利 (1)
+          <a href="/categories/%E7%BC%96%E7%A8%8B/">
+            编程 (9)
           </a>
         </li>
       
